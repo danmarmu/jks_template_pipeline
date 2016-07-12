@@ -1,5 +1,7 @@
 node {
    // Mark the code checkout 'stage'....
+   input 'Ready to go?'
+
    stage 'Checkout'
 
    // Get some code from a GitHub repository
