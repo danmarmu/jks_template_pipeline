@@ -24,7 +24,7 @@ node {
       returnStdout: true, \
       returnStatus: true
 
-   echo ${mvnOutput}
+   echo " Maven output variable is : ${mvnOutput}"
 
    mail from: 'daniel.murray@emc.com', \
 	to: 'daniel.murray@emc.com', \
