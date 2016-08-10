@@ -4,8 +4,8 @@ node {
 
    stage 'Checkout'
 
-   def giturl = 'https://github.com/visvv/SimpleMaven.git'
-   //https://github.com/jglick/simple-maven-project-with-tests.git'
+   //def giturl = 'https://github.com/visvv/SimpleMaven.git'
+   def giturl = 'https://github.com/jglick/simple-maven-project-with-tests.git'
    def gitname = 'Sample Maven Project'
 
 
@@ -19,6 +19,7 @@ node {
    def mvnHome = tool 'M3'
    
    // Mark the code build 'stage'....
+	try {
    stage 'Build'
    // Run the maven build
    String[] mvnReturn = sh script: "${mvnHome}/bin/mvn clean install", \
@@ -27,6 +28,18 @@ node {
 
    echo " Maven return variable is : ${mvnReturn}"
 //   echo " Maven output variable is : ${mvnReturn[1]}"
+} catch (err) {
+	mail from: 'daniel.murray@emc.com', \
+        to: 'daniel.murray@emc.com', \
+        cc: "daniel.murray@emc.com", \
+        bcc: "daniel.murray@emc.com", \
+        charset: "UTF8", \
+        mimeType: "text/plain", \
+        replyTo: "daniel.murray@emc.com", \
+        subject: "${gitname} is built", \
+	body: "project build error: ${err}"
+
+}
 
    mail from: 'daniel.murray@emc.com', \
 	to: 'daniel.murray@emc.com', \
