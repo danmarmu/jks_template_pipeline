@@ -25,7 +25,7 @@ node {
       returnStatus: true
 
 //   echo " Maven return variable is : ${mvnReturn[0]}"
-   echo " Maven output variable is : ${mvnReturn[1]}"
+//   echo " Maven output variable is : ${mvnReturn[1]}"
 
    mail from: 'daniel.murray@emc.com', \
 	to: 'daniel.murray@emc.com', \
