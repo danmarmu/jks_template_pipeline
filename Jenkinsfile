@@ -20,8 +20,9 @@ node {
    // Mark the code build 'stage'....
    stage 'Build'
    // Run the maven build
-   sh script: "${mvnHome}/bin/mvn clean install", \
-      returnStdout: mvnOutput
+   def mvnOutput = sh script: "${mvnHome}/bin/mvn clean install", \
+      returnStdout: true, \
+      returnStatus: true
 
    echo ${mvnOutput}
 
