@@ -17,7 +17,6 @@ node {
    // **       in the global configuration.           
    def mvnHome = tool 'M3'
    
-   def mvnOutput = ""
    // Mark the code build 'stage'....
    stage 'Build'
    // Run the maven build
