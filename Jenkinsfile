@@ -20,15 +20,15 @@ node {
    // Run the maven build
    sh "${mvnHome}/bin/mvn clean install"
    
-   mail bcc: 'daniel.murray@emc.com', \
-	body: '${gitname} is built', \
-	cc: 'fjdklsa', \
-	charset: 'UTF8', \
-	from: 'daniel.murray@emc.com', \
-	mimeType: 'text/plain', \
-	replyTo: 'donotreply@emc.com', \
-	subject: '${gitname} is built', \
-	to: 'daniel.murray@emc.com'
+   mail from: 'daniel.murray@emc.com', \
+	to: 'daniel.murray@emc.com', \
+	cc: "daniel.murray@emc.com", \
+	bcc: "daniel.murray@emc.com", \
+	charset: "UTF8", \
+	mimeType: "text/plain", \
+	replyTo: "daniel.murray@emc.com", \
+	subject: "${gitname} is built", \
+	body: "${gitname} is built"
 
 
    stage 'Unit Test'
