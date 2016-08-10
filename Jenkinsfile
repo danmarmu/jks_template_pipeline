@@ -7,7 +7,7 @@ node {
 
 
    // Get some code from a GitHub repository
-   git url: ${giturl}'https://github.com/jglick/simple-maven-project-with-tests.git'
+   git url: '${giturl}'
    //git url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
    
    // Get the maven tool.
