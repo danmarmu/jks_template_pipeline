@@ -43,8 +43,8 @@ node {
    stage 'Functional Smoke Test'
    sh "echo Functional Smoke Testing Started"
 
-   stage 'Archive of Release Candidate''
-   sh "echo Unit Testing Started"
+   stage 'Archive of Release Candidate'
+   sh "echo Archive of Release Candidatate"
 
    stage 'Unit Test'
    sh "echo Unit Testing Started"
@@ -54,8 +54,10 @@ node {
 
    stage 'Unit Test'
    sh "echo Unit Testing Started"
+
    stage 'Unit Test'
    sh "echo Unit Testing Started"
+
    stage 'Unit Test'
    sh "echo Unit Testing Started"
 }
