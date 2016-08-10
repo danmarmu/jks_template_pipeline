@@ -22,8 +22,8 @@ node {
    stage 'Build'
    // Run the maven build
    String[] mvnReturn = sh script: "${mvnHome}/bin/mvn clean install", \
-      returnStdout: true, \
-      returnStatus: true
+      returnStdout: true
+//      returnStatus: true
 
    echo " Maven return variable is : ${mvnReturn}"
 //   echo " Maven output variable is : ${mvnReturn[1]}"
