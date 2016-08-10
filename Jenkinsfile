@@ -19,27 +19,24 @@ node {
    def mvnHome = tool 'M3'
    
    // Mark the code build 'stage'....
-	try {
    stage 'Build'
    // Run the maven build
-   String[] mvnReturn = sh script: "${mvnHome}/bin/mvn clean install", \
+   def mvnReturn = sh script: "${mvnHome}/bin/mvn clean install", \
       returnStdout: true
 //      returnStatus: true
 
    echo " Maven return variable is : ${mvnReturn}"
 //   echo " Maven output variable is : ${mvnReturn[1]}"
-} catch (err) {
-	mail from: 'daniel.murray@emc.com', \
-        to: 'daniel.murray@emc.com', \
-        cc: "daniel.murray@emc.com", \
-        bcc: "daniel.murray@emc.com", \
-        charset: "UTF8", \
-        mimeType: "text/plain", \
-        replyTo: "daniel.murray@emc.com", \
-        subject: "${gitname} is built", \
-	body: "project build error: ${err}"
-
-}
+	
+//mail from: 'daniel.murray@emc.com', \
+//i       to: 'daniel.murray@emc.com', \
+//        cc: "daniel.murray@emc.com", \
+//        bcc: "daniel.murray@emc.com", \
+//        charset: "UTF8", \
+//        mimeType: "text/plain", \
+//        replyTo: "daniel.murray@emc.com", \
+//        subject: "${gitname} is built", \
+//	body: "project build error: ${err}"
 
    mail from: 'daniel.murray@emc.com', \
 	to: 'daniel.murray@emc.com', \
