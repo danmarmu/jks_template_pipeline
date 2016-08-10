@@ -23,9 +23,9 @@ node {
    mail bcc: 'daniel.murray@emc.com', \
 	body: '${gitname} is built', \
 	cc: 'fjdklsa', \
-	charset: '', \
+	charset: 'UTF8', \
 	from: 'daniel.murray@emc.com', \
-	mimeType: '', \
+	mimeType: 'text/plain', \
 	replyTo: 'donotreply@emc.com', \
 	subject: '${gitname} is built', \
 	to: 'daniel.murray@emc.com'
