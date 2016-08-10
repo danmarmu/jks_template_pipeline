@@ -4,7 +4,8 @@ node {
 
    stage 'Checkout'
 
-   def giturl = 'https://github.com/jglick/simple-maven-project-with-tests.git'
+   def giturl = 'https://github.com/visvv/SimpleMaven.git'
+   //https://github.com/jglick/simple-maven-project-with-tests.git'
    def gitname = 'Sample Maven Project'
 
 
@@ -24,7 +25,7 @@ node {
       returnStdout: true, \
       returnStatus: true
 
-//   echo " Maven return variable is : ${mvnReturn[0]}"
+   echo " Maven return variable is : ${mvnReturn}"
 //   echo " Maven output variable is : ${mvnReturn[1]}"
 
    mail from: 'daniel.murray@emc.com', \
