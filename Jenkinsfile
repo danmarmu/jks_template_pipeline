@@ -21,11 +21,11 @@ node {
    // Mark the code build 'stage'....
    stage 'Build'
    // Run the maven build
-   def mvnReturn = sh(returnStdout: true, returnStatus: true, script: "${mvnHome}/bin/mvn clean install").trim()
+   def (mvnReturnText, mvnReturnCode = sh(returnStdout: true, returnStatus: true, script: "${mvnHome}/bin/mvn clean install").trim()
 //      returnStatus: true
 
-   echo " Maven return variable is : ${mvnReturn[0]}"
-   echo " Maven output variable is : ${mvnReturn[1]}"
+   echo " Maven output variable is : ${mvnReturnCode}"
+   echo " Maven return variable is : ${mvnReturnText}"
 	
 //mail from: 'daniel.murray@emc.com', \
 //i       to: 'daniel.murray@emc.com', \
