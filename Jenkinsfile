@@ -38,7 +38,7 @@ mail from: 'daniel.murray@emc.com', \
         mimeType: "text/plain", \
         replyTo: "daniel.murray@emc.com", \
         subject: "${gitname} is failing", \
-	body: "project build error: ${err}\n $mvnReturnText"
+	body: "Project build error: ${err}\n This is a test."
 }
 
    mail from: 'daniel.murray@emc.com', \
