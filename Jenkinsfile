@@ -24,7 +24,6 @@ node {
    def mvnReturnText = sh(returnStdout: true, script: "${mvnHome}/bin/mvn clean install").trim()
 //      returnStatus: true
 
-   echo " Maven output variable is : ${mvnReturnCode}"
    echo " Maven return variable is : ${mvnReturnText}"
 	
 //mail from: 'daniel.murray@emc.com', \
