@@ -21,7 +21,7 @@ node {
    // Mark the code build 'stage'....
    stage 'Build'
    // Run the maven build
-   def (mvnReturnText, mvnReturnCode) = sh(returnStdout: true, returnStatus: true, script: "${mvnHome}/bin/mvn clean install").trim()
+   def mvnReturnText = sh(returnStdout: true, script: "${mvnHome}/bin/mvn clean install").trim()
 //      returnStatus: true
 
    echo " Maven output variable is : ${mvnReturnCode}"
