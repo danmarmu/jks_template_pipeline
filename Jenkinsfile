@@ -1,5 +1,7 @@
 #!groovy
 
+def buildurl = ${env.BUILD_URL}
+echo "BUILD URL is: ${buildurl}"
 def userInput = input( id: 'userInput', message: 'Let\'s promote?', submitter: 'requester')
 
 node {
