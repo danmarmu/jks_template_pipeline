@@ -17,13 +17,13 @@ node {
    // ** NOTE: This 'M3' maven tool must be configured
    // **       in the global configuration.           
    def mvnHome = tool 'M3'
-   def mvnReturn = "" 
+   def mvnReturnText = "" 
    // Mark the code build 'stage'....
-
+   
 try {
    stage 'Build'
    // Run the maven build
-   def mvnReturnText = sh(returnStdout: true, script: "${mvnHome}/bin/mvn clean install").trim()
+   mvnReturnText = sh(returnStdout: true, script: "${mvnHome}/bin/mvn clean install").trim()
 //      returnStatus: true
 
    echo " Maven return variable is : ${mvnReturnText}"
