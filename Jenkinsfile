@@ -4,8 +4,8 @@ node {
 
    stage 'Checkout'
 
-   def giturl = 'https://github.com/visvv/SimpleMaven.git'
-   //def giturl = 'https://github.com/jglick/simple-maven-project-with-tests.git'
+   //def giturl = 'https://github.com/visvv/SimpleMaven.git'
+   def giturl = 'https://github.com/jglick/simple-maven-project-with-tests.git'
    def gitname = 'Sample Maven Project'
 
 
