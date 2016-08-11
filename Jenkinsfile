@@ -30,15 +30,16 @@ try {
 } catch (err) {	
    
 echo " Maven return variable is : ${mvnReturnText}"
+
 mail from: 'daniel.murray@emc.com', \
        to: 'daniel.murray@emc.com', \
         cc: "daniel.murray@emc.com", \
         bcc: "daniel.murray@emc.com", \
         charset: "UTF8", \
-        mimeType: "text/plain", \
+        mimeType: "text/html", \
         replyTo: "daniel.murray@emc.com", \
         subject: "${gitname} is failing", \
-	body: "Project build error: ${err}\n This is a test."
+	body: "Project build error: ${err}\\n This is a test."
 }
 
    mail from: 'daniel.murray@emc.com', \
