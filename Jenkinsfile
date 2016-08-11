@@ -1,5 +1,8 @@
 #!groovy
 
+def userInput = input(
+ id: 'userInput', message: 'Let\'s promote?', submitter: requester)
+
 node {
 
    stage 'Checkout'
